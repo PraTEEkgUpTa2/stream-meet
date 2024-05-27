@@ -10,6 +10,7 @@ import styles from '@/styles/room.module.css'
 import { useRouter } from "next/router";
 import Bottom from "@/component/Bottom";
 import { cloneDeep } from "lodash";
+import CopySection from "@/component/CopySection";
 
 const Room = () => {
   const socket = useSocket()
@@ -155,6 +156,7 @@ const Room = () => {
     })}
     
     </div>
+    <CopySection roomId = {roomId} />
     <Bottom muted={playersHighlighted?.muted} playing = {playersHighlighted?.playing} toggleAudio = {toggleAudio} toggleVideo = {toggleVideo} leaveRoom = {leaveRoom}/>
     </>
   )
